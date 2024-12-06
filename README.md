@@ -139,7 +139,7 @@ Este archivo simula el comportamiento térmico de una **lámina de metal** duran
 
 ![image](https://github.com/user-attachments/assets/f01ed6de-6184-4d58-83e8-7af4fcc638a6)
 
-#Pasos para ejecutar los archivos
+# Pasos para ejecutar los archivos
 - Para poder ejecutar los archivos se necesitan descargar las carpetas que se desean ejecutar, ya sea la de additive o welding, estas carpetas cuentan con una estructura diseñada para que el usuario que desee replicar el ejemplo o probarlo solo tenga que dar unos clics.
 1. El primer paso es ubicar el ejemplo a correr dentro de la capeta principal de soldadura. ![image](https://github.com/user-attachments/assets/ce75d54f-fd3e-4b97-b9ea-e79c8acf79e8)
 
