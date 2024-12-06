@@ -1,0 +1,39 @@
+
+CFLAGS = -fpermissive -O2  -I ../../../SPOOLES.2.2 -I ../../../pthreads-w32-2-9-1-release/Pre-built.2/include -I ../../../mkl -DARCH="Linux" -DSPOOLES -DPARDISO -DARPACK -DMATRIXSTORAGE -DNETWORKOUT -D_SC_NPROCESSORS_CONF=1 -posix -fcommon
+FFLAGS = -Wall -O2 -fopenmp -fallow-argument-mismatch
+
+CC=gcc
+FC=gfortran
+
+.c.o :
+	$(CC) $(CFLAGS) -c $<
+.f.o :
+	$(FC) $(FFLAGS) -c $<
+
+include Makefile.inc
+
+SCCXMAIN = ccx_2.21.c
+
+OCCXF = $(SCCXF:.f=.o)
+OCCXC = $(SCCXC:.c=.o)
+OCCXMAIN = $(SCCXMAIN:.c=.o)
+
+DIR=../../../SPOOLES.2.2
+MKL=../../../mkl
+
+LIBS = \
+       $(DIR)/spooles.a \
+       ../../../ARPACK/libarpack_MINGW64.a \
+       ../../../pthreads-w32-2-9-1-release/Pre-built.2/lib/x64/libpthreadGC2.a \
+       -lm \
+       $(MKL)/mkl_core.2.dll \
+       $(MKL)/mkl_intel_thread.2.dll \
+       $(MKL)/mkl_intel_lp64_dll.lib \
+       $(MKL)/libiomp5md.dll
+
+ccx_2.21_MKL: $(OCCXMAIN) ccx_2.21_MKL.a
+	./date.pl; $(CC) $(CFLAGS) -c ccx_2.21.c; $(FC)  -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.21_MKL.a $(LIBS) -fopenmp
+
+ccx_2.21_MKL.a: $(OCCXF) $(OCCXC)
+	ar vr $@ $?
+                                                                               

@@ -1,0 +1,117 @@
+*HEADING
+Weld of Metal sheet
+**
+**
+*include, input=all.msh
+**assign elements to an element set
+**
+**
+*SOLID SECTION, ELSET=C3D8, MATERIAL=X6CrNiTi1810
+          1.,
+**
+**
+*MATERIAL, NAME=X6CrNiTi1810
+*CONDUCTIVITY
+**W/m/K
+   14.E0,  0.25
+    0.25E0, 400.
+   32.4E0, 1360.
+   32.4E0, 2500.
+*specific heat
+**mJ/tone K
+  521.E6, 0.
+  548.E6, 200.
+  575.E6, 400.
+  605.E6, 600.
+  640.E6, 800.
+  665.E6, 1000.
+  680.E6, 1200.
+  695.E6, 1350.
+  730.E6, 2500.
+*density
+**Tone/mm³
+   7.912E-9,  0.25	
+   7.140E-9, 1500.
+**
+**
+**
+*INITIAL CONDITIONS, TYPE=TEMPERATURE
+ Nall, 20.
+** Nall_2,  0.25
+**
+*PHYSICAL CONSTANTS, ABSOLUTE ZERO=-273.15, STEFAN BOLTZMANN=5.669E-11
+**physical constants, stefan boltzmann=5.669e-11, absolute zero=-273.15
+**stefan boltzmann=5.669e-8 W/m²K⁴
+**
+************************************
+**		STEP 1:					**
+************************************
+*RESTART,WRITE,FREQUENCY=1
+*STEP, INC=500
+*HEAT TRANSFER, DIRECT
+0.01, 0.02
+*DFLUX, OP=NEW
+*OUTPUT, FREQUENCY=1
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE
+NT
+**
+*EL FILE
+HFL
+*NODE FILE, FREQUENCY=1
+NT
+**
+*END STEP
+************************************
+**		STEP 2:
+************************************
+*STEP, INC=10000
+*HEAT TRANSFER
+0.02, 0.98, , 0.03
+** Film based on AIR_1
+*FILM, OP=NEW
+** Film based on air
+*include, input=film1.flm
+*DFLUX, OP=NEW
+ C3D8, BFNU, 1
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE
+NT
+**
+*EL FILE
+HFL
+*NODE FILE, FREQUENCY=1
+NT
+**
+*END STEP
+**
+************************************
+**		STEP 3:					**
+************************************
+************************************
+*STEP, INC=50000
+*HEAT TRANSFER
+0.025, 350, ,15
+*DFLUX, OP=NEW
+*FILM, OP=NEW
+** Film based on air
+*include, input=film2.flm
+*RADIATE, OP=NEW
+** Radiate based on air
+*include, input=radiation1.rad
+**
+*OUTPUT, FREQUENCY=1
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE
+NT
+**
+*EL FILE
+HFL
+*NODE FILE, FREQUENCY=1
+NT
+**
+*END STEP
