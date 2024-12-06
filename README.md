@@ -63,7 +63,7 @@ FILM, RADIATE, DFLUX: Estos comandos se usan para aplicar condiciones térmicas 
 
 **Visualizacion de los resultados**
 En la siguiente imagen se muetra los resultados de la simulacion donde se esta construyendo la pieza por medio de capaz
-[Am_therm_total](https://github.com/user-attachments/assets/ba0c98f3-6111-4864-8001-eea18c28fdee)
+![Am_therm_total](https://github.com/user-attachments/assets/ba0c98f3-6111-4864-8001-eea18c28fdee)
 
 # AM_mech_1
 
