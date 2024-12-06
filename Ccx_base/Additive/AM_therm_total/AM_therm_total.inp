@@ -1,0 +1,362 @@
+*heading
+*INCLUDE, INPUT=all_1.msh
+*INCLUDE, INPUT=Eb1.msh
+*INCLUDE, INPUT=Eb2.msh
+*INCLUDE, INPUT=Eb3.msh
+*INCLUDE, INPUT=Eb4.msh
+*INCLUDE, INPUT=Eb5.msh
+*INCLUDE, INPUT=Eb6.msh
+*INCLUDE, INPUT=Eb7.msh
+*INCLUDE, INPUT=Eb8.msh
+*INCLUDE, INPUT=Eb9.msh
+*INCLUDE, INPUT=Eb10.msh
+*INCLUDE, INPUT=POWDER.mat
+*INCLUDE, INPUT=Deposit.mat
+*INCLUDE, INPUT=X5CRNI.mat
+**First
+*solid section, material=Deposit, elset=Eb1
+*solid section, material=Deposit, elset=Eb2
+*solid section, material=Deposit, elset=Eb3
+*solid section, material=Deposit, elset=Eb4
+*solid section, material=Deposit, elset=Eb5
+*solid section, material=Deposit, elset=Eb6
+*solid section, material=Deposit, elset=Eb7
+*solid section, material=Deposit, elset=Eb8
+*solid section, material=Deposit, elset=Eb9
+*solid section, material=Deposit, elset=Eb10
+**
+**
+*INITIAL CONDITIONS, TYPE=TEMPERATURE
+Nall,20.
+**
+*PHYSICAL CONSTANTS, ABSOLUTE ZERO=-273.15, STEFAN BOLTZMANN=5.669E-11
+**physical constants, stefan boltzmann=5.669e-11, absolute zero=-273.15
+**stefan boltzmann=5.669e-8 W/m²K⁴
+**
+**		STEP 1:		Do Nothing			**
+************************************
+************************************
+**		STEP 1:		Do Nothing			**
+************************************
+*STEP, INC=1000
+*HEAT TRANSFER, Direct
+**, DIRECT=NO
+0.005, 0.01,
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE
+NT,SDV
+**
+*EL FILE
+HFL,SDV
+**
+*END STEP
+**
+**
+************************************
+**		STEP 2:		Welding			**
+************************************
+**
+*STEP, INC=100000
+*HEAT TRANSFER
+0.005, 16.395, , 0.01
+**CHANGE SOLID SECTION,MATERIAL=Deposit,ELSET=Eb1
+**Convection based on all
+*FILM,OP=NEW
+*INCLUDE,INPUT=Eb1.flm
+** Radiate based on all
+*RADIATE,OP=NEW
+*INCLUDE,INPUT=Eb1.rad
+** Inhomogeneously flux based on all
+*DFLUX, OP=NEW
+ **EFirst, BFNU, 1
+Eb1, BFNU, 1
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE,FREQUENCY=10
+NT
+**
+*EL FILE,FREQUENCY=10
+HFL,SDV
+**
+*END STEP
+**
+**
+**STEP3
+**
+*STEP, INC=100000
+*HEAT TRANSFER
+0.005, 16.395, , 0.01
+**
+*CHANGE SOLID SECTION,MATERIAL=X5CRNI,ELSET=Eb1
+**CHANGE SOLID SECTION,MATERIAL=Deposit,ELSET=Eb2
+**Convection based on all
+*FILM,OP=NEW
+*INCLUDE,INPUT=Eb2.flm
+** Radiate based on all
+*RADIATE,OP=NEW
+*INCLUDE,INPUT=Eb2.rad
+** Inhomogeneously flux based on all
+*DFLUX, OP=NEW
+ **EFirst, BFNU, 1
+Eb2, BFNU, 1
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE,FREQUENCY=10
+NT
+**
+*EL FILE,FREQUENCY=10
+HFL,SDV
+**
+*END STEP
+**
+**
+**STEP4
+**
+*STEP, INC=100000
+*HEAT TRANSFER
+0.005, 16.395, , 0.01
+*CHANGE SOLID SECTION,MATERIAL=X5CRNI,ELSET=Eb2
+**CHANGE SOLID SECTION,MATERIAL=Deposit,ELSET=Eb3
+**Convection based on all
+*FILM,OP=NEW
+*INCLUDE,INPUT=Eb3.flm
+** Radiate based on all
+*RADIATE,OP=NEW
+*INCLUDE,INPUT=Eb3.rad
+** Inhomogeneously flux based on all
+*DFLUX, OP=NEW
+ **EFirst, BFNU, 1
+Eb3, BFNU, 1
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE,FREQUENCY=10
+NT
+**
+*EL FILE,FREQUENCY=10
+HFL,SDV
+**
+*END STEP
+**
+**
+** STEP 5
+*STEP, INC=100000
+*HEAT TRANSFER
+0.005, 16.395, , 0.01
+*CHANGE SOLID SECTION,MATERIAL=X5CRNI,ELSET=Eb3
+**CHANGE SOLID SECTION,MATERIAL=Deposit,ELSET=Eb4
+**Convection based on all
+*FILM,OP=NEW
+*INCLUDE,INPUT=Eb4.flm
+** Radiate based on all
+*RADIATE,OP=NEW
+*INCLUDE,INPUT=Eb4.rad
+** Inhomogeneously flux based on all
+*DFLUX, OP=NEW
+ **EFirst, BFNU, 1
+Eb4, BFNU, 1
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE,FREQUENCY=10
+NT
+**
+*EL FILE,FREQUENCY=10
+HFL,SDV
+**
+*END STEP
+**
+**
+**STEP6
+*STEP, INC=100000
+*HEAT TRANSFER
+0.005, 16.395, , 0.01
+*CHANGE SOLID SECTION,MATERIAL=X5CRNI,ELSET=Eb4
+**CHANGE SOLID SECTION,MATERIAL=Deposit,ELSET=Eb5
+**Convection based on all
+*FILM,OP=NEW
+*INCLUDE,INPUT=Eb5.flm
+** Radiate based on all
+*RADIATE,OP=NEW
+*INCLUDE,INPUT=Eb5.rad
+** Inhomogeneously flux based on all
+*DFLUX, OP=NEW
+ **EFirst, BFNU, 1
+Eb5, BFNU, 1
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE,FREQUENCY=10
+NT
+**
+*EL FILE,FREQUENCY=10
+HFL,SDV
+**
+*END STEP
+**
+**STEP7
+*STEP, INC=100000
+*HEAT TRANSFER
+0.005, 16.395, , 0.01
+*CHANGE SOLID SECTION,MATERIAL=X5CRNI,ELSET=Eb5
+**CHANGE SOLID SECTION,MATERIAL=Deposit,ELSET=Eb6
+**Convection based on all
+*FILM,OP=NEW
+*INCLUDE,INPUT=Eb6.flm
+** Radiate based on all
+*RADIATE,OP=NEW
+*INCLUDE,INPUT=Eb6.rad
+** Inhomogeneously flux based on all
+*DFLUX, OP=NEW
+ **EFirst, BFNU, 1
+Eb6, BFNU, 1
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE,FREQUENCY=10
+NT
+**
+*EL FILE,FREQUENCY=10
+HFL,SDV
+**
+*END STEP
+**
+**STEP8
+*STEP, INC=100000
+*HEAT TRANSFER
+0.005, 16.395, , 0.01
+*CHANGE SOLID SECTION,MATERIAL=X5CRNI,ELSET=Eb6
+**CHANGE SOLID SECTION,MATERIAL=Deposit,ELSET=Eb7
+**Convection based on all
+*FILM,OP=NEW
+*INCLUDE,INPUT=Eb7.flm
+** Radiate based on all
+*RADIATE,OP=NEW
+*INCLUDE,INPUT=Eb7.rad
+** Inhomogeneously flux based on all
+*DFLUX, OP=NEW
+ **EFirst, BFNU, 1
+Eb7, BFNU, 1
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE,FREQUENCY=10
+NT
+**
+*EL FILE,FREQUENCY=10
+HFL,SDV
+**
+*END STEP
+**
+**STEP9
+*STEP, INC=100000
+*HEAT TRANSFER
+0.005, 16.395, , 0.01
+*CHANGE SOLID SECTION,MATERIAL=X5CRNI,ELSET=Eb7
+**CHANGE SOLID SECTION,MATERIAL=Deposit,ELSET=Eb8
+**Convection based on all
+*FILM,OP=NEW
+*INCLUDE,INPUT=Eb8.flm
+** Radiate based on all
+*RADIATE,OP=NEW
+*INCLUDE,INPUT=Eb8.rad
+** Inhomogeneously flux based on all
+*DFLUX, OP=NEW
+ **EFirst, BFNU, 1
+Eb8, BFNU, 1
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE,FREQUENCY=10
+NT
+**
+*EL FILE,FREQUENCY=10
+HFL,SDV
+**
+*END STEP
+**
+**STEP10
+*STEP, INC=100000
+*HEAT TRANSFER
+0.005, 16.395, , 0.01
+*CHANGE SOLID SECTION,MATERIAL=X5CRNI,ELSET=Eb8
+**CHANGE SOLID SECTION,MATERIAL=Deposit,ELSET=Eb9
+**Convection based on all
+*FILM,OP=NEW
+*INCLUDE,INPUT=Eb9.flm
+** Radiate based on all
+*RADIATE,OP=NEW
+*INCLUDE,INPUT=Eb9.rad
+** Inhomogeneously flux based on all
+*DFLUX, OP=NEW
+ **EFirst, BFNU, 1
+Eb9, BFNU, 1
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE,FREQUENCY=10
+NT
+**
+*EL FILE,FREQUENCY=10
+HFL,SDV
+**
+*END STEP
+**
+**STEP11
+*STEP, INC=100000
+*HEAT TRANSFER
+0.005, 16.395, , 0.01
+*CHANGE SOLID SECTION,MATERIAL=X5CRNI,ELSET=Eb9
+**CHANGE SOLID SECTION,MATERIAL=Deposit,ELSET=Eb10
+**Convection based on all
+*FILM,OP=NEW
+*INCLUDE,INPUT=Eb10.flm
+** Radiate based on all
+*RADIATE,OP=NEW
+*INCLUDE,INPUT=Eb10.rad
+** Inhomogeneously flux based on all
+*DFLUX, OP=NEW
+ **EFirst, BFNU, 1
+Eb10, BFNU, 1
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE,FREQUENCY=10
+NT
+**
+*EL FILE,FREQUENCY=10
+HFL,SDV
+**
+*END STEP
+************************************
+**		STEP 4:		Cooling			**
+************************************
+**
+*STEP, INC=10000
+*HEAT TRANSFER
+**, DIRECT=NO
+0.1, 193.7, , 15
+**
+** Convection based on all
+*FILM,OP=MOD
+**INCLUDE,INPUT=Eb10.flm
+** Radiate based on all
+*RADIATE,OP=MOD
+**INCLUDE,INPUT=Eb10.rad
+** Delete flux
+*DFLUX, OP=NEW
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE,FREQUENCY=10
+NT
+**
+*EL FILE,FREQUENCY=10
+HFL,SDV
+**
+*END STEP
+
