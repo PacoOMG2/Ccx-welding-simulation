@@ -21,9 +21,11 @@ Este repositorio contiene los archivos utilizados para realizar simulaciones de 
 
 - Ccx para ejecutar soldaduras y soldaduras aditivas.
 
--Documentación del flujo de trabajo y detalles técnicos.
+- Documentación del flujo de trabajo y detalles técnicos.
 
 
 **Objetivo**
 
 Promover el uso de software libre en la simulación de procesos de soldadura y fomentar la colaboración en el desarrollo de nuevas técnicas.
+
+(H1) Hola*
