@@ -1,7 +1,7 @@
 # Ccx-welding-simulation
 Este repositorio contiene los archivos utilizados para realizar simulaciones de procesos de soldadura convencional y soldadura aditiva. Las simulaciones se llevaron a cabo utilizando CalculiX como solver, aprovechando una subrutina personalizada llamada dflux para modelar la transmisión de calor.
 
-El propósito de este repositorio es compartir este enfoque de simulación con la comunidad, facilitando que otros puedan:
+**El propósito de este repositorio es compartir este enfoque de simulación con la comunidad, facilitando que otros puedan:**
 
 -Replicar los experimentos realizados.
 
