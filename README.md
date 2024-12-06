@@ -155,7 +155,15 @@ Este archivo simula el comportamiento térmico de una **lámina de metal** duran
 6. Para ordenar los archivos generados al momentro de ejecutar los anteriores bat se ejecuta el ultimo bat 3_ordenar_archivos, el cual creara una carpeta con los archivos creados mientras se corria el ejemplo, quedando de la siguiente manera.
    ![image](https://github.com/user-attachments/assets/f54f622d-9242-4caf-a3bf-cb18a93db434)
 
-7. Como ultimo paso se abre la aplicacion paraview, la cual se puede obtener de la siguiente fuente: https://www.paraview.org/download/ 
+7. Como ultimo paso se abre la aplicacion paraview, la cual se puede obtener de la siguiente fuente: https://www.paraview.org/download/
+
+8. Dentro de la aplicacion se localiza la pestaña file, se selecciona open, se busca la carpeta donde se encuentra el archivo que se ejecuto y dentro de la carpeta resultados se selecciona el archivo pvd
+
+9. Se habilita el ojo y despues se oprime el boton apply, que se encuentra abajo a la izquierda. ![image](https://github.com/user-attachments/assets/58ed645f-8d3e-478c-8313-fb79ae7f17e4)
+
+10. Para iniciar la simulacion se controla por medio de la barra de pausa, que se encuentra en la parte de arriba del centro del menú y se da play, automaticamente se empezaran a visualizar los resultados de la simulación.![image](https://github.com/user-attachments/assets/5b65c809-abc2-4f5c-9aff-9aa3abe148b4)
+
+
 
 
 
