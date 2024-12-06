@@ -145,6 +145,12 @@ Este archivo simula el comportamiento térmico de una **lámina de metal** duran
 2. Una vez entre al ejemplo que desea ejecutar, vera la carpeta del ejemplo con una estructura en especifico, la cual cuenta el archivo .inp de el ejemplo, las mayas y archivos .bat.
    ![archivos.bat](https://github.com/user-attachments/assets/b978fdcd-504d-4b1e-85f2-dc40082eec48)
 4. Se localizan los bat y se ejecutan en el orden que estan asignados, primero el 1_calculix, se abrira una consola donde se tiene que esperar a que se procese el modelo, la velocidad de procesado depende de la potencia del equipo de computo, para saber que ya termino el procesamiento se tiene que esperar hasta que aparezca el siguiente mensaje: ![image](https://github.com/user-attachments/assets/b71b217c-99c6-4df7-a13e-dd7efc58fa16)
+5. Al terminar el procesamiento se ejecuta el segundo bat 2_convertido, el cual se encargara crear un archivo .pvd para poder realizar la visualizacion en paraview, al terminar de realizarse el proceso de este bat aparecera el siguiente mensaje: ![image](https://github.com/user-attachments/assets/cd34213f-860e-495b-81ff-7fe818bece9f)
+6. Este bat creara una carpeta de resultados con archivos vtu y pvd para poder visualizar la simulación.
+7. Para ordenar los archivos generados al momentro de ejecutar los anteriores bat se ejecuta el ultimo bat 3_ordenar_archivos, el cual creara una carpeta con los archivos creados mientras se corria el ejemplo, quedando de la siguiente manera.
+   ![image](https://github.com/user-attachments/assets/f54f622d-9242-4caf-a3bf-cb18a93db434)
+
+
 
 
 
