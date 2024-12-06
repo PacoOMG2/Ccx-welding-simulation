@@ -1,0 +1,31 @@
+*heading
+*INCLUDE, INPUT=all_1.msh
+*INCLUDE, INPUT=Eb1.msh
+*INCLUDE, INPUT=user_X5CRNI.mat
+*INCLUDE, INPUT=base_fixed.nam
+*DEPVAR
+32
+*solid section, material=user_X5CRNI, elset=Eb1
+**
+**
+*INITIAL CONDITIONS, TYPE=TEMPERATURE
+ Nall, 20.
+**
+*PHYSICAL CONSTANTS, ABSOLUTE ZERO=-273.15, STEFAN BOLTZMANN=5.669E-11
+**
+************************************
+*BOUNDARY
+base_fixed,1,3,0
+**
+*INITIAL CONDITIONS, TYPE=TEMPERATURE
+ Nall, 20.
+**
+*PHYSICAL CONSTANTS, ABSOLUTE ZERO=-273.15, STEFAN BOLTZMANN=5.669E-11
+**physical constants, stefan boltzmann=5.669e-11, absolute zero=-273.15
+**stefan boltzmann=5.669e-8 W/m²K⁴
+**
+**RESTART,WRITE,FREQUENCY=20
+**RESTART,READ,STEP=201
+**
+*INCLUDE, INPUT=input.nam
+*INCLUDE, INPUT=input2.nam

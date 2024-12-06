@@ -1,0 +1,19 @@
+*MATERIAL, NAME=POWDER
+**
+**
+**
+*EXPANSION
+0.,     20.
+0.,     1600.
+**
+**
+*CONDUCTIVITY
+**W/m/K
+   1.E-12,
+**
+*specific heat
+**mJ/tone K
+  1.E-6
+**
+*density
+1.E-12
