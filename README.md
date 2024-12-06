@@ -155,6 +155,7 @@ Este archivo simula el comportamiento térmico de una **lámina de metal** duran
 6. Para ordenar los archivos generados al momentro de ejecutar los anteriores bat se ejecuta el ultimo bat 3_ordenar_archivos, el cual creara una carpeta con los archivos creados mientras se corria el ejemplo, quedando de la siguiente manera.
    ![image](https://github.com/user-attachments/assets/f54f622d-9242-4caf-a3bf-cb18a93db434)
 
+7. Como ultimo paso se abre la aplicacion paraview, la cual se puede obtener de la siguiente fuente: https://www.paraview.org/download/ 
 
 
 
