@@ -1,0 +1,62 @@
+*heading
+*INCLUDE, INPUT=all_1.msh
+*INCLUDE, INPUT=Eb1.msh
+*INCLUDE, INPUT=Deposit.mat
+*INCLUDE, INPUT=base_fixed.nam
+**First
+*solid section, material=Deposit, elset=Eb1
+**
+*boundary
+base_fixed,11,,20
+**
+*INITIAL CONDITIONS, TYPE=TEMPERATURE
+ Nall, 20.
+**
+*PHYSICAL CONSTANTS, ABSOLUTE ZERO=-273.15, STEFAN BOLTZMANN=5.669E-11
+**
+************************************
+**		STEP 1:		Do Nothing			**
+************************************
+*STEP, INC=1000
+*HEAT TRANSFER, Direct
+**, DIRECT=NO
+0.01, 0.01,
+**
+*RESTART,WRITE
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE
+NT,SDV
+**
+*EL FILE
+SDV
+**
+*END STEP
+**
+************************************************
+*STEP, INC=100000
+*HEAT TRANSFER
+0.001, 16.395, , 0.01
+**Convection based on all
+*FILM,OP=NEW
+*INCLUDE,INPUT=Eb1.flm
+** Radiate based on all
+*RADIATE,OP=NEW
+*INCLUDE,INPUT=Eb1.rad
+** Inhomogeneously flux based on all
+*DFLUX, OP=NEW
+ **EFirst, BFNU, 1
+Eb1, BFNU, 1
+**
+*NODE PRINT, NSET=Nall
+NT
+*NODE FILE,FREQUENCY=10
+NT
+**
+*EL FILE,FREQUENCY=10
+SDV
+**
+*END STEP
+**
+**
+**
