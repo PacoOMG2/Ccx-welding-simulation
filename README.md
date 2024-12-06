@@ -42,7 +42,7 @@ Para realiazar una instalacion de limpia de CalculiX se necesita descargar la ca
 # Additive simulation
 **Explicacion**
 La soldadura aditiva es un proceso en el que se agrega material capa por capa para unir partes de metal, similar a cómo funciona la impresión 3D, pero en lugar de plástico, se utiliza metal. Este tipo de soldadura es útil para reparar piezas dañadas o crear piezas complejas que no pueden fabricarse fácilmente con métodos tradicionales. En lugar de eliminar material como en la soldadura convencional, donde se funden y unen dos piezas de metal, en la soldadura aditiva se va añadiendo material para formar nuevas estructuras, lo que permite mayor control sobre la forma y la calidad del resultado.
-Se realizaron 3 ejemplos de este tipo de soldadura, donde se construyo una pieza con un total de 5 capaz distintas.
+Se realizaron 3 ejemplos de este tipo de soldadura, donde se construyo una pieza con un total de 5 capaz distintas simulando este proceso por una subrutina llamada dflux, la cual se encuentra dentro de los archivos.
 ## AM_therm_total
 Este el siguiente archivo contiene código detallado de un archivo .inp de Abaqus utilizado para simular un proceso de soldadura.
 El código se organiza en varios pasos que simulan las diferentes fases del proceso de soldadura, incluyendo:
@@ -60,5 +60,8 @@ INCLUDE: Se utilizan los comandos *INCLUDE para incluir archivos externos que co
 STEP: Cada fase del proceso de soldadura está contenida en un paso (*STEP). Estos pasos definen la duración, los incrementos de tiempo, y las condiciones térmicas o mecánicas a aplicar en cada fase del proceso.
 
 FILM, RADIATE, DFLUX: Estos comandos se usan para aplicar condiciones térmicas específicas, como la convección (por *FILM), radiación (por *RADIATE), y flujo de calor inhomogéneo (por *DFLUX).
+
+**Visualizacion de los resultados**
+
 
 
