@@ -28,4 +28,5 @@ Este repositorio contiene los archivos utilizados para realizar simulaciones de 
 
 Promover el uso de software libre en la simulación de procesos de soldadura y fomentar la colaboración en el desarrollo de nuevas técnicas.
 
-(H1) Hola*
+#  Instalacion de CalculiX de forma base(H1) 
+Para realiazar una instalacion de limpia de CalculiX se necesita descargar la carpeta de archivos https://github.com/PacoOMG2/Ccx-welding-simulation/tree/main/Ccx_base/ccx_sin_exe
