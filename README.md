@@ -142,12 +142,17 @@ Este archivo simula el comportamiento térmico de una **lámina de metal** duran
 #Pasos para ejecutar los archivos
 - Para poder ejecutar los archivos se necesitan descargar las carpetas que se desean ejecutar, ya sea la de additive o welding, estas carpetas cuentan con una estructura diseñada para que el usuario que desee replicar el ejemplo o probarlo solo tenga que dar unos clics.
 1. El primer paso es ubicar el ejemplo a correr dentro de la capeta principal de soldadura. ![image](https://github.com/user-attachments/assets/ce75d54f-fd3e-4b97-b9ea-e79c8acf79e8)
+
 2. Una vez entre al ejemplo que desea ejecutar, vera la carpeta del ejemplo con una estructura en especifico, la cual cuenta el archivo .inp de el ejemplo, las mayas y archivos .bat.
    ![archivos.bat](https://github.com/user-attachments/assets/b978fdcd-504d-4b1e-85f2-dc40082eec48)
-4. Se localizan los bat y se ejecutan en el orden que estan asignados, primero el 1_calculix, se abrira una consola donde se tiene que esperar a que se procese el modelo, la velocidad de procesado depende de la potencia del equipo de computo, para saber que ya termino el procesamiento se tiene que esperar hasta que aparezca el siguiente mensaje: ![image](https://github.com/user-attachments/assets/b71b217c-99c6-4df7-a13e-dd7efc58fa16)
-5. Al terminar el procesamiento se ejecuta el segundo bat 2_convertido, el cual se encargara crear un archivo .pvd para poder realizar la visualizacion en paraview, al terminar de realizarse el proceso de este bat aparecera el siguiente mensaje: ![image](https://github.com/user-attachments/assets/cd34213f-860e-495b-81ff-7fe818bece9f)
-6. Este bat creara una carpeta de resultados con archivos vtu y pvd para poder visualizar la simulación.
-7. Para ordenar los archivos generados al momentro de ejecutar los anteriores bat se ejecuta el ultimo bat 3_ordenar_archivos, el cual creara una carpeta con los archivos creados mientras se corria el ejemplo, quedando de la siguiente manera.
+   
+3. Se localizan los bat y se ejecutan en el orden que estan asignados, primero el 1_calculix, se abrira una consola donde se tiene que esperar a que se procese el modelo, la velocidad de procesado depende de la potencia del equipo de computo, para saber que ya termino el procesamiento se tiene que esperar hasta que aparezca el siguiente mensaje: ![image](https://github.com/user-attachments/assets/b71b217c-99c6-4df7-a13e-dd7efc58fa16)
+
+4. Al terminar el procesamiento se ejecuta el segundo bat 2_convertido, el cual se encargara crear un archivo .pvd para poder realizar la visualizacion en paraview, al terminar de realizarse el proceso de este bat aparecera el siguiente mensaje: ![image](https://github.com/user-attachments/assets/cd34213f-860e-495b-81ff-7fe818bece9f)
+
+5. Este bat creara una carpeta de resultados con archivos vtu y pvd para poder visualizar la simulación.
+
+6. Para ordenar los archivos generados al momentro de ejecutar los anteriores bat se ejecuta el ultimo bat 3_ordenar_archivos, el cual creara una carpeta con los archivos creados mientras se corria el ejemplo, quedando de la siguiente manera.
    ![image](https://github.com/user-attachments/assets/f54f622d-9242-4caf-a3bf-cb18a93db434)
 
 
