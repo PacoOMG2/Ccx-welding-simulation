@@ -13,5 +13,7 @@ Modelos y mallas asociados a los procesos de soldadura.
 Ccx en forma base sin modificaciones
 Ccx para ejecutar soldaduras y soldaduras aditivas.
 Documentación del flujo de trabajo y detalles técnicos.
+
+
 Objetivo
 Promover el uso de software libre en la simulación de procesos de soldadura y fomentar la colaboración en el desarrollo de nuevas técnicas.
