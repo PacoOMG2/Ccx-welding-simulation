@@ -33,7 +33,32 @@ Para realiazar una instalacion de limpia de CalculiX se necesita descargar la ca
 1. Al descargar la carpeta se necesita instalar el programa [msys2](https://www.msys2.org) para hacer la construccion de ccx mediante su consola en su aplicacion MSYS2 MINGW64
 2. Al terminar la instalacion del programa, se busca la carpeta y se entra msys64 en la ruta donde se instalo, se accede a subcarpeta home despues a la siguiente carpeta de tu "usuario" y en ella se pega la carpeta de ccx_sin_exe, importante siempre dejar una copia de esta carpeta.
 3. Ahora dejando una copia de la carpeta se procede a cambiar el nombre de la otra carpeta dejandolo solo como ccx.
-4. Una hecho lo anterior, se entra a MINGW64, en la consola se teclea **cd ccx** se da enter y despues se ejecuta el build dentro de la carpeta de ccx con el siguiente comando **./build_ccx.sh**.
+4. Una hecho lo anterior, se entra a MINGW64, en la consola se teclea **cd ccx** se da enter y despues se ejecuta el build dentro de la carpeta de ccx con el siguiente comando **./build_ccx.sh**
 5. Atomaticamente al dar enter se empezara a construir ccx de forma base.
+
 # Video explicativo de la instalacion 
 "video"
+
+# Additive simulation
+**Explicacion**
+La soldadura aditiva es un proceso en el que se agrega material capa por capa para unir partes de metal, similar a cómo funciona la impresión 3D, pero en lugar de plástico, se utiliza metal. Este tipo de soldadura es útil para reparar piezas dañadas o crear piezas complejas que no pueden fabricarse fácilmente con métodos tradicionales. En lugar de eliminar material como en la soldadura convencional, donde se funden y unen dos piezas de metal, en la soldadura aditiva se va añadiendo material para formar nuevas estructuras, lo que permite mayor control sobre la forma y la calidad del resultado.
+Se realizaron 3 ejemplos de este tipo de soldadura, donde se construyo una pieza con un total de 5 capaz distintas.
+## AM_therm_total
+Este el siguiente archivo contiene código detallado de un archivo .inp de Abaqus utilizado para simular un proceso de soldadura.
+El código se organiza en varios pasos que simulan las diferentes fases del proceso de soldadura, incluyendo:
+
+Condiciones Iniciales: Se definen las condiciones térmicas iniciales antes de que comience el proceso de soldadura. En este paso se establece la temperatura inicial de todos los nodos en el modelo.
+Fase de Soldadura: En esta fase, se simula el proceso de soldadura en varios pasos. Se actualizan las propiedades del material y se aplica calor a la región de la soldadura utilizando los archivos de flujo de calor (.flm), radiación (.rad) y distribución inhomogénea del calor (.dflux).
+Este paso simula la aplicación de calor por convección y radiación en la zona de soldadura, modificando el material a lo largo de la trayectoria de la soldadura.
+
+Ciclo de Material: A lo largo de cada paso, se cambia el material de las diferentes zonas de la soldadura, utilizando el comando *CHANGE SOLID SECTION, para simular cómo la zona afectada por el calor se convierte en un nuevo material con propiedades diferentes.
+
+Enfriamiento: Al final de la simulación, se simula el proceso de enfriamiento donde las condiciones térmicas se modifican para representar el enfriamiento del material soldado. Este paso se simula utilizando la convección y radiación, pero con diferentes parámetros de flujo de calor.
+
+INCLUDE: Se utilizan los comandos *INCLUDE para incluir archivos externos que contienen la información de la malla y los materiales. Esto hace que el código sea modular y fácil de modificar sin tener que cambiar directamente el archivo principal.
+
+STEP: Cada fase del proceso de soldadura está contenida en un paso (*STEP). Estos pasos definen la duración, los incrementos de tiempo, y las condiciones térmicas o mecánicas a aplicar en cada fase del proceso.
+
+FILM, RADIATE, DFLUX: Estos comandos se usan para aplicar condiciones térmicas específicas, como la convección (por *FILM), radiación (por *RADIATE), y flujo de calor inhomogéneo (por *DFLUX).
+
+
