@@ -161,7 +161,7 @@ Este archivo simula el comportamiento térmico de una **lámina de metal** duran
 
 9. Se habilita el ojo y despues se oprime el boton apply, que se encuentra abajo a la izquierda. ![image](https://github.com/user-attachments/assets/58ed645f-8d3e-478c-8313-fb79ae7f17e4)
 
-10. Dependiendo de los datos se quieran visualizar se escoje una opción, en este caso se cuenta con 2 opciones, NT que se refiere a la distribución de la temperatura y Flux que se refiere a al flujo de calor aplicado en una determinada zona, el cual permite simular un cordon de soldadura.![image](https://github.com/user-attachments/assets/35f2df3a-462a-49c1-996b-4bf94d30036f)
+10. Dependiendo del analisis a visualizar se escoje una opción, en este caso se cuenta con 2 opciones, NT que se refiere a la distribución de la temperatura y Flux que se refiere a al flujo de calor aplicado en una determinada zona, el cual permite simular un cordon de soldadura.![image](https://github.com/user-attachments/assets/35f2df3a-462a-49c1-996b-4bf94d30036f)
 
 
 11. Para iniciar la simulacion se controla por medio de la barra de pausa, que se encuentra en la parte de arriba del centro del menú y se da play, automaticamente se empezaran a visualizar los resultados de la simulación.![image](https://github.com/user-attachments/assets/5b65c809-abc2-4f5c-9aff-9aa3abe148b4)
