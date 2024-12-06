@@ -43,31 +43,10 @@ Para realiazar una instalacion de limpia de CalculiX se necesita descargar la ca
 **Explicacion**
 La soldadura aditiva es un proceso en el que se agrega material capa por capa para unir partes de metal, similar a cómo funciona la impresión 3D, pero en lugar de plástico, se utiliza metal. Este tipo de soldadura es útil para reparar piezas dañadas o crear piezas complejas que no pueden fabricarse fácilmente con métodos tradicionales. En lugar de eliminar material como en la soldadura convencional, donde se funden y unen dos piezas de metal, en la soldadura aditiva se va añadiendo material para formar nuevas estructuras, lo que permite mayor control sobre la forma y la calidad del resultado.
 Se realizaron 3 ejemplos de este tipo de soldadura, donde se construyo una pieza con un total de 5 capaz distintas simulando este proceso por una subrutina llamada dflux, la cual se encuentra dentro de los archivos.
-## AM_therm_total
-Este el siguiente archivo contiene código detallado de un archivo .inp de Abaqus utilizado para simular un proceso de soldadura.
-El código se organiza en varios pasos que simulan las diferentes fases del proceso de soldadura, incluyendo:
 
-Condiciones Iniciales: Se definen las condiciones térmicas iniciales antes de que comience el proceso de soldadura. En este paso se establece la temperatura inicial de todos los nodos en el modelo.
-Fase de Soldadura: En esta fase, se simula el proceso de soldadura en varios pasos. Se actualizan las propiedades del material y se aplica calor a la región de la soldadura utilizando los archivos de flujo de calor (.flm), radiación (.rad) y distribución inhomogénea del calor (.dflux).
-Este paso simula la aplicación de calor por convección y radiación en la zona de soldadura, modificando el material a lo largo de la trayectoria de la soldadura.
+# AM_therm_1
 
-Ciclo de Material: A lo largo de cada paso, se cambia el material de las diferentes zonas de la soldadura, utilizando el comando *CHANGE SOLID SECTION, para simular cómo la zona afectada por el calor se convierte en un nuevo material con propiedades diferentes.
-
-Enfriamiento: Al final de la simulación, se simula el proceso de enfriamiento donde las condiciones térmicas se modifican para representar el enfriamiento del material soldado. Este paso se simula utilizando la convección y radiación, pero con diferentes parámetros de flujo de calor.
-
-INCLUDE: Se utilizan los comandos *INCLUDE para incluir archivos externos que contienen la información de la malla y los materiales. Esto hace que el código sea modular y fácil de modificar sin tener que cambiar directamente el archivo principal.
-
-STEP: Cada fase del proceso de soldadura está contenida en un paso (*STEP). Estos pasos definen la duración, los incrementos de tiempo, y las condiciones térmicas o mecánicas a aplicar en cada fase del proceso.
-
-FILM, RADIATE, DFLUX: Estos comandos se usan para aplicar condiciones térmicas específicas, como la convección (por *FILM), radiación (por *RADIATE), y flujo de calor inhomogéneo (por *DFLUX).
-
-**Visualizacion de los resultados**
-- En la siguiente imagen se muetra los resultados de la simulacion donde se esta construyendo la pieza por medio de capaz
-![Am_therm_total](https://github.com/user-attachments/assets/ba0c98f3-6111-4864-8001-eea18c28fdee)
-
-# AM_mech_1
-
-Este archivo está configurado para simular un proceso de **soldadura aditiva**, en el cual se construye una estructura capa por capa, añadiendo material fundido que se solidifica al enfriarse. A continuación, te explico cómo funciona cada parte del proceso en el contexto de la soldadura aditiva:
+Este archivo está configurado para simular un proceso de **soldadura aditiva**, en el cual se construye una estructura capa por capa, añadiendo material fundido que se solidifica al enfriarse. A continuación, explico cómo funciona elproceso en el contexto de la soldadura aditiva de este ejemplo:
 
 ## Mallas y Materiales
 
@@ -97,4 +76,27 @@ El archivo también incluye un comando de **reinicio** para guardar los resultad
 ## Resumen
 
 Este archivo simula la **adición de material capa por capa** en un proceso de soldadura aditiva, calculando cómo el calor se distribuye y se transfiere al material durante el proceso de construcción de la pieza. En cada paso, se agregan nuevas capas de material (como se ve en los archivos de malla y material, como `Eb1.msh` y `Deposit.mat`), y se simula cómo la temperatura y el flujo de calor cambian durante el proceso.
+![Am_therm_1](https://github.com/user-attachments/assets/c7730e2f-5c11-4d1f-8e0f-074e0076d337)
+
+## AM_therm_total
+Este el siguiente archivo contiene código detallado de un archivo .inp de Abaqus utilizado para simular un proceso de soldadura.
+El código se organiza en varios pasos que simulan las diferentes fases del proceso de soldadura, incluyendo:
+
+Condiciones Iniciales: Se definen las condiciones térmicas iniciales antes de que comience el proceso de soldadura. En este paso se establece la temperatura inicial de todos los nodos en el modelo.
+Fase de Soldadura: En esta fase, se simula el proceso de soldadura en varios pasos. Se actualizan las propiedades del material y se aplica calor a la región de la soldadura utilizando los archivos de flujo de calor (.flm), radiación (.rad) y distribución inhomogénea del calor (.dflux).
+Este paso simula la aplicación de calor por convección y radiación en la zona de soldadura, modificando el material a lo largo de la trayectoria de la soldadura.
+
+Ciclo de Material: A lo largo de cada paso, se cambia el material de las diferentes zonas de la soldadura, utilizando el comando *CHANGE SOLID SECTION, para simular cómo la zona afectada por el calor se convierte en un nuevo material con propiedades diferentes.
+
+Enfriamiento: Al final de la simulación, se simula el proceso de enfriamiento donde las condiciones térmicas se modifican para representar el enfriamiento del material soldado. Este paso se simula utilizando la convección y radiación, pero con diferentes parámetros de flujo de calor.
+
+INCLUDE: Se utilizan los comandos *INCLUDE para incluir archivos externos que contienen la información de la malla y los materiales. Esto hace que el código sea modular y fácil de modificar sin tener que cambiar directamente el archivo principal.
+
+STEP: Cada fase del proceso de soldadura está contenida en un paso (*STEP). Estos pasos definen la duración, los incrementos de tiempo, y las condiciones térmicas o mecánicas a aplicar en cada fase del proceso.
+
+FILM, RADIATE, DFLUX: Estos comandos se usan para aplicar condiciones térmicas específicas, como la convección (por *FILM), radiación (por *RADIATE), y flujo de calor inhomogéneo (por *DFLUX).
+
+**Visualizacion de los resultados**
+- En la siguiente imagen se muetra los resultados de la simulacion donde se esta construyendo la pieza por medio de capaz
+![Am_therm_total](https://github.com/user-attachments/assets/ba0c98f3-6111-4864-8001-eea18c28fdee)
 
