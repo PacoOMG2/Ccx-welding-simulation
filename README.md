@@ -3,23 +3,23 @@ Este repositorio contiene los archivos utilizados para realizar simulaciones de 
 
 **El propósito de este repositorio es compartir este enfoque de simulación con la comunidad, facilitando que otros puedan:**
 
--Replicar los experimentos realizados.
+- Replicar los experimentos realizados.
 
--Implementar mejoras en sus propios proyectos.
+- Implementar mejoras en sus propios proyectos.
 
--Optimizar o ampliar las técnicas utilizadas en el modelado.
+- Optimizar o ampliar las técnicas utilizadas en el modelado.
 
 **Contenido**
 
--Archivos .inp configurados para las simulaciones.
+- Archivos .inp configurados para las simulaciones.
 
--Subrutina dflux para modelar el comportamiento térmico.
+- Subrutina dflux para modelar el comportamiento térmico.
 
--Modelos y mallas asociados a los procesos de soldadura.
+- Modelos y mallas asociados a los procesos de soldadura.
 
--Ccx en forma base sin modificaciones
+- Ccx en forma base sin modificaciones
 
--Ccx para ejecutar soldaduras y soldaduras aditivas.
+- Ccx para ejecutar soldaduras y soldaduras aditivas.
 
 -Documentación del flujo de trabajo y detalles técnicos.
 
