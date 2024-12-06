@@ -62,6 +62,8 @@ STEP: Cada fase del proceso de soldadura está contenida en un paso (*STEP). Est
 FILM, RADIATE, DFLUX: Estos comandos se usan para aplicar condiciones térmicas específicas, como la convección (por *FILM), radiación (por *RADIATE), y flujo de calor inhomogéneo (por *DFLUX).
 
 **Visualizacion de los resultados**
+![Am_therm_total](https://github.com/user-attachments/assets/ba0c98f3-6111-4864-8001-eea18c28fdee)
 
+# AM_mech_1
 
 
