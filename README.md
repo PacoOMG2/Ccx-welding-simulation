@@ -144,7 +144,7 @@ Este archivo simula el comportamiento térmico de una **lámina de metal** duran
 1. El primer paso es ubicar el ejemplo a correr dentro de la capeta principal de soldadura. ![image](https://github.com/user-attachments/assets/ce75d54f-fd3e-4b97-b9ea-e79c8acf79e8)
 2. Una vez entre al ejemplo que desea ejecutar, vera la carpeta del ejemplo con una estructura en especifico, la cual cuenta el archivo .inp de el ejemplo, las mayas y archivos .bat.
    ![archivos.bat](https://github.com/user-attachments/assets/b978fdcd-504d-4b1e-85f2-dc40082eec48)
-4. Se localizan los bat y se ejecutan en el orden que estan asignados, primero el 1_calculix, se abrira una consola donde se tiene que esperar a que se procese el modelo hasta que aparezca el siguiente mensaje:![image](https://github.com/user-attachments/assets/b71b217c-99c6-4df7-a13e-dd7efc58fa16)
+4. Se localizan los bat y se ejecutan en el orden que estan asignados, primero el 1_calculix, se abrira una consola donde se tiene que esperar a que se procese el modelo hasta que aparezca el siguiente mensaje:. ![image](https://github.com/user-attachments/assets/b71b217c-99c6-4df7-a13e-dd7efc58fa16)
 La aparicion del mensaje depende de la velocidad de procesamiento de tu equipo de computo.
 
 
