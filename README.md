@@ -101,3 +101,41 @@ FILM, RADIATE, DFLUX: Estos comandos se usan para aplicar condiciones térmicas 
 
 ![Am_therm_total](https://github.com/user-attachments/assets/ba0c98f3-6111-4864-8001-eea18c28fdee)
 
+# Welding simulation
+La siguiente simulacion tambien se compone por un dflux que calcula el flujo de calor en cada punto de integración de la malla durante la simulación de un proceso de soldadura, utilizando un modelo de elementos finitos. Específicamente, este subprograma permite implementar la distribución de calor generada por una fuente de calor (como un láser o arco) a lo largo de una trayectoria de soldadura.
+En resumen, este subprograma gestiona cómo se distribuye y aplica el calor en un modelo de elementos finitos a lo largo de una trayectoria de soldadura, permitiendo simular el proceso de transferencia de calor y la evolución de la temperatura en la malla durante la simulación de soldadura. Esto es crucial para predecir los efectos térmicos en la pieza, como la deformación, las tensiones residuales y la microestructura del material.
+# Weld_I_dlfux
+
+Este archivo está configurado para simular un proceso de **soldadura en una lámina de metal**, en el que se modela el comportamiento térmico del material durante el proceso de soldadura. 
+
+## Mallas y Materiales
+
+- **Mallas (.msh)**: Incluye la malla que define la geometría de la pieza de metal que se va a simular. En este caso, se utiliza un archivo de malla base llamado `all.msh`.
+- **Materiales**: El archivo define un material específico llamado `X6CrNiTi1810`, que es un tipo de acero inoxidable utilizado en el proceso de soldadura. Las propiedades térmicas del material, como la conductividad térmica, la capacidad calorífica y la densidad, se definen en función de la temperatura.
+
+## Condiciones Iniciales
+
+Se establece una **temperatura inicial de 20°C** para todos los nodos, lo que representa el estado inicial del material antes de aplicar el calor de la soldadura.
+
+## Paso 1: Transferencia de Calor Directa
+
+En este paso se realiza la transferencia de calor directa a través del material. Los parámetros del calor aplicado, como la tasa de transferencia de calor y el tiempo, se definen para este paso. Además, se incluye el comando **DFLUX** para modelar el flujo de calor inhomogéneo y se guarda la información de los nodos y elementos.
+
+## Paso 2: Convección y Transferencia de Calor por Película
+
+En este paso, se modela la transferencia de calor a través de una **película de aire**, que simula el enfriamiento del material mediante convección. Se incluye un archivo externo `film1.flm` para definir la película de aire, y el comando **DFLUX** se usa para modelar el flujo de calor. Además, se siguen registrando los resultados de nodos y elementos.
+
+## Paso 3: Radiación y Transferencia de Calor
+
+Este paso simula la transferencia de calor por **radiación** desde la superficie caliente del material hacia el entorno. Se incluye un archivo externo `radiation1.rad` para definir los parámetros de radiación, y nuevamente se utiliza **DFLUX** para modelar el flujo de calor. Además, se mantiene el registro de los resultados intermedios.
+
+## Reinicio y Almacenamiento de Resultados
+
+Cada paso incluye comandos de **reinicio** para guardar los resultados intermedios. Esto es esencial en simulaciones largas para almacenar datos de temperatura y flujo de calor a medida que avanza el proceso de soldadura.
+
+## Resumen
+
+Este archivo simula el comportamiento térmico de una **lámina de metal** durante el proceso de soldadura, aplicando diferentes mecanismos de transferencia de calor, como la transferencia directa, la convección por película de aire y la radiación. A lo largo de los pasos, se agregan nuevos parámetros para cada proceso de transferencia térmica y se registran los resultados de la simulación.
+
+![image](https://github.com/user-attachments/assets/f01ed6de-6184-4d58-83e8-7af4fcc638a6)
+
