@@ -67,4 +67,34 @@ FILM, RADIATE, DFLUX: Estos comandos se usan para aplicar condiciones térmicas 
 
 # AM_mech_1
 
+Este archivo está configurado para simular un proceso de **soldadura aditiva**, en el cual se construye una estructura capa por capa, añadiendo material fundido que se solidifica al enfriarse. A continuación, te explico cómo funciona cada parte del proceso en el contexto de la soldadura aditiva:
+
+## Mallas y Materiales
+
+- **Mallas (.msh)**: Incluye las mallas que definen la geometría de la estructura que se va a simular. En este caso, el archivo usa una malla base (`all_1.msh`) y mallas adicionales para las capas de soldadura, como `Eb1.msh`.
+- **Materiales (.mat)**: Incluye los materiales que se usan en la simulación. El archivo hace referencia a un material de depósito (`Deposit.mat`), que es el material que se va añadiendo capa por capa durante la soldadura aditiva.
+
+## Condiciones Iniciales
+
+Se establece una **temperatura inicial de 20°C** para todos los nodos, lo que representa el estado inicial del material antes de que se aplique el calor.
+
+## Paso 1: "Do Nothing"
+
+En esta fase, no se realiza ninguna acción, pero el sistema se prepara para las siguientes simulaciones de transferencia de calor. Este paso es útil para crear una base de datos de inicio y verificar que todo está configurado correctamente antes de comenzar a aplicar calor.
+
+## Paso 2: Proceso de Soldadura Aditiva
+
+Este paso simula la adición de material (generalmente en forma de polvo o alambre) sobre la base de la pieza. Se aplican tres mecanismos de transferencia de calor:
+
+1. **Convección**: Transferencia de calor entre el material fundido y la atmósfera circundante. En la soldadura aditiva, el material recién depositado se calienta y transfiere parte de su energía térmica al entorno.
+2. **Radiación**: La superficie caliente de la soldadura irradia calor al entorno.
+3. **Flux Inhomogéneo**: Esto modela cómo el calor no se distribuye uniformemente en la pieza, lo cual es típico en la soldadura aditiva, donde el calor varía en diferentes puntos de la pieza según la posición de la boquilla de soldadura.
+
+## Reinicio y Almacenamiento de Resultados
+
+El archivo también incluye un comando de **reinicio** para guardar los resultados intermedios, lo cual es esencial en simulaciones largas o complejas como las de soldadura aditiva. Así, los datos de temperatura y flujo de calor se guardan para su posterior análisis y control.
+
+## Resumen
+
+Este archivo simula la **adición de material capa por capa** en un proceso de soldadura aditiva, calculando cómo el calor se distribuye y se transfiere al material durante el proceso de construcción de la pieza. En cada paso, se agregan nuevas capas de material (como se ve en los archivos de malla y material, como `Eb1.msh` y `Deposit.mat`), y se simula cómo la temperatura y el flujo de calor cambian durante el proceso.
 
